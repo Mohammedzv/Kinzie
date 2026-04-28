@@ -2,66 +2,63 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>لـ (كينزي) 👀</title>
+  <title>رسالة ليكي 💙</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
       font-family: Arial;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      overflow: hidden;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       text-align: center;
+      overflow: hidden;
     }
 
-    .card {
+    .box {
       background: rgba(255,255,255,0.1);
       padding: 25px;
       border-radius: 20px;
       backdrop-filter: blur(10px);
       box-shadow: 0 0 25px rgba(0,0,0,0.4);
-      animation: fadeIn 2s;
-      z-index: 2;
+      max-width: 90%;
+      animation: fade 2s ease;
     }
 
     h1 {
-      font-size: 26px;
-      margin-bottom: 10px;
+      font-size: 22px;
+      margin-bottom: 15px;
     }
 
     p {
-      opacity: 0.8;
+      line-height: 1.8;
+      font-size: 18px;
+      opacity: 0.9;
     }
 
-    button {
+    .btn {
       margin-top: 20px;
-      padding: 12px 25px;
+      padding: 12px 20px;
       border: none;
       border-radius: 10px;
-      background: #00c6ff;
+      background: #ff4d6d;
       color: white;
       font-size: 16px;
       cursor: pointer;
       transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
 
-    button:hover {
-      background: #0072ff;
+    .btn:hover {
+      background: #ff1e50;
     }
 
-    #msg {
-      margin-top: 20px;
-      font-size: 18px;
-      display: none;
-      animation: fadeIn 1s;
-    }
-
-    @keyframes fadeIn {
+    @keyframes fade {
       from {opacity: 0; transform: translateY(20px);}
       to {opacity: 1; transform: translateY(0);}
     }
@@ -69,7 +66,7 @@
     /* قلوب */
     .heart {
       position: absolute;
-      color: rgba(255, 0, 100, 0.7);
+      color: rgba(255, 0, 100, 0.6);
       animation: float 6s linear infinite;
     }
 
@@ -83,38 +80,29 @@
         opacity: 0;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <div class="card">
-    <h1 id="name"></h1>
-    <p>في حاجة معمولالك مخصوص 👀</p>
-    <button onclick="showMsg()">اضغطي هنا</button>
-    <div id="msg">أنا عملت ده عشانك 💙</div>
+  <div class="box">
+    <h1>💙 رسالة ليكي</h1>
+
+    <p>
+      يمكن الكلام مش دايمًا بيعبر…<br>
+      بس أنا حبيت أعمل حاجة تفضل موجودة.<br><br>
+
+      وجودك فرق معايا أكتر مما تتخيلي…<br>
+      وخلاني أتعلم أعمل حاجات أنا نفسي مبسوط بيها.<br><br>
+
+      مش عايز حاجة غير إنك تبتسمي بس لما تشوفي ده 💙
+    </p>
+
+    <a class="btn" href="index.html">ارجعي 👈</a>
   </div>
 
   <script>
-    // كتابة الاسم تدريجي
-    let text = "لـ (كينزي) 💙";
-    let i = 0;
-
-    function type() {
-      if(i < text.length){
-        document.getElementById("name").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, 80);
-      }
-    }
-    type();
-
-    // إظهار الرسالة
-    function showMsg() {
-      document.getElementById("msg").style.display = "block";
-    }
-
-    // قلوب متحركة
     function createHeart() {
       let heart = document.createElement("div");
       heart.classList.add("heart");
@@ -130,10 +118,6 @@
 
     setInterval(createHeart, 500);
   </script>
-
-<a href="message.html">
-  <button>في حاجة تانية 👀</button>
-</a>
 
 </body>
 </html>
